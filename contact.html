@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>お問い合わせ | Pegasus Tech Ventures</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script defer src="assets/js/main.js"></script>
+    <style>
+      .top-contact-section {
+        background: #e8e8e8;
+        padding: 72px 0 80px;
+      }
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 64px;
+        align-items: start;
+      }
+      .contact-heading-new {
+        font-size: clamp(20px, 2.2vw, 28px);
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.45;
+        margin-bottom: 32px;
+      }
+      .contact-form-new {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .contact-form-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .contact-form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .contact-form-field label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #333;
+      }
+      .contact-form-field .req {
+        color: #c00;
+      }
+      .contact-form-new input,
+      .contact-form-new textarea {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid #ccc;
+        border-radius: 24px;
+        font-size: 14px;
+        color: #333;
+        background: #fff;
+        box-sizing: border-box;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      .contact-form-new textarea {
+        border-radius: 12px;
+        resize: vertical;
+        min-height: 100px;
+      }
+      .contact-form-new input:focus,
+      .contact-form-new textarea:focus {
+        border-color: #888;
+      }
+      .contact-send-btn {
+        align-self: center;
+        padding: 12px 48px;
+        background: transparent;
+        border: 1.5px solid #555;
+        border-radius: 24px;
+        font-size: 15px;
+        color: #333;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+        letter-spacing: 0.04em;
+      }
+      .contact-send-btn:hover {
+        background: #333;
+        color: #fff;
+      }
+      .contact-privacy {
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+      }
+      .contact-privacy a {
+        color: #555;
+        text-decoration: underline;
+      }
+      .contact-info-col {
+        padding-top: 72px;
+      }
+      .contact-info-line {
+        font-size: 15px;
+        color: #222;
+        margin-bottom: 4px;
+        font-weight: 500;
+      }
+      .contact-info-addr {
+        font-size: 14px;
+        color: #444;
+        line-height: 1.8;
+        margin-top: 20px;
+        margin-bottom: 28px;
+      }
+      .contact-social-row {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .contact-social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #222;
+        transition: color 0.2s;
+      }
+      .contact-social-icon svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+      .contact-social-icon:hover {
+        color: #555;
+      }
+      @media (max-width: 768px) {
+        .contact-layout {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .contact-form-row {
+          grid-template-columns: 1fr;
+        }
+        .contact-info-col {
+          padding-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="lang-ja page-contact">
+    <header class="header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html#top">
+          <img src="assets/corporate_img/logo_horizon.png" alt="Pegasus Tech Ventures" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <div class="nav-item has-dropdown">
+            <a href="index.html#top">
+              <span class="i18n i18n-ja">ペガサスについて</span>
+              <span class="i18n i18n-en">About Pegasus</span>
+            </a>
+            <div class="dropdown">
+              <a href="index.html#mission">
+                <span class="i18n i18n-ja">企業理念</span>
+                <span class="i18n i18n-en">Company Philosophy</span>
+              </a>
+              <a href="index.html#ceo-message">
+                <span class="i18n i18n-ja">CEOメッセージ</span>
+                <span class="i18n i18n-en">CEO Message</span>
+              </a>
+              <a href="index.html#company-info">
+                <span class="i18n i18n-ja">企業情報</span>
+                <span class="i18n i18n-en">Company Information</span>
+              </a>
+              <a href="index.html#management">
+                <span class="i18n i18n-ja">経営陣紹介</span>
+                <span class="i18n i18n-en">Management</span>
+              </a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="index.html#about">
+              <span class="i18n i18n-ja">事業概要</span>
+              <span class="i18n i18n-en">Business Overview</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="news.html">
+              <span class="i18n i18n-ja">ニュース</span>
+              <span class="i18n i18n-en">News</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="sustainability.html">
+              <span class="i18n i18n-ja">サステナビリティ</span>
+              <span class="i18n i18n-en">Sustainability</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="contact.html">
+              <span class="i18n i18n-ja">お問い合わせ</span>
+              <span class="i18n i18n-en">Contact</span>
+            </a>
+          </div>
+        </nav>
+        <div class="header-actions">
+          <button class="button ghost language-toggle" id="lang-toggle" type="button" aria-label="Switch to English">
+            <span class="lang-item is-en" aria-hidden="true">🇺🇸</span>
+            <span class="lang-item is-ja" aria-hidden="true">🇯🇵</span>
+          </button>
+          <button class="nav-toggle" type="button" aria-expanded="false">
+            <span class="i18n i18n-ja">メニュー</span>
+            <span class="i18n i18n-en">Menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="section top-contact-section" id="contact">
+        <div class="container">
+          <div class="contact-layout">
+            <!-- Left: Form -->
+            <div class="contact-form-col">
+              <h2 class="contact-heading-new">
+                <span class="i18n i18n-ja">もっと知りたいですか？<br>今すぐお問い合わせください</span>
+                <span class="i18n i18n-en">Want to learn more?<br>Contact us today</span>
+              </h2>
+              <form id="contact-form-top" class="contact-form-new">
+                <div class="contact-form-row">
+                  <div class="contact-form-field">
+                    <label for="name-top">
+                      <span class="i18n i18n-ja">氏名 <span class="req">*</span></span>
+                      <span class="i18n i18n-en">Name <span class="req">*</span></span>
+                    </label>
+                    <input id="name-top" name="name" type="text"
+                      data-placeholder-ja="山田 太郎" data-placeholder-en="John Smith"
+                      placeholder="山田 太郎" required />
+                  </div>
+                  <div class="contact-form-field">
+                    <label for="email-top">
+                      <span class="i18n i18n-ja">メール <span class="req">*</span></span>
+                      <span class="i18n i18n-en">Email <span class="req">*</span></span>
+                    </label>
+                    <input id="email-top" name="email" type="email" placeholder="email@example.com" required />
+                  </div>
+                  <div class="contact-form-field">
+                    <label for="company-top">
+                      <span class="i18n i18n-ja">会社名 <span class="req">*</span></span>
+                      <span class="i18n i18n-en">Company <span class="req">*</span></span>
+                    </label>
+                    <input id="company-top" name="company" type="text"
+                      data-placeholder-ja="株式会社○○" data-placeholder-en="Company Name"
+                      placeholder="株式会社○○" required />
+                  </div>
+                </div>
+                <div class="contact-form-field">
+                  <label for="message-top">
+                    <span class="i18n i18n-ja">メッセージ</span>
+                    <span class="i18n i18n-en">Message</span>
+                  </label>
+                  <textarea id="message-top" name="message" rows="5"
+                    data-placeholder-ja="お問い合わせ内容" data-placeholder-en="Your message"
+                    placeholder="お問い合わせ内容"></textarea>
+                </div>
+                <button class="contact-send-btn" type="submit">
+                  <span class="i18n i18n-ja">送信</span>
+                  <span class="i18n i18n-en">Send</span>
+                </button>
+                <p class="contact-privacy">
+                  <a href="#">
+                    <span class="i18n i18n-ja">プライバシーポリシー</span>
+                    <span class="i18n i18n-en">Privacy Policy</span>
+                  </a>
+                </p>
+              </form>
+            </div>
+
+            <!-- Right: Contact info -->
+            <div class="contact-info-col">
+              <p class="contact-info-line">+1 408 645 5532</p>
+              <p class="contact-info-line">contact@pegasusventures.com</p>
+              <p class="contact-info-addr">
+                2680 N. 1st St., Suite 250<br>
+                San Jose, California 95134<br>
+                USA
+              </p>
+              <div class="contact-social-row">
+                <a href="https://www.linkedin.com/company/pegasus-tech-ventures" target="_blank" rel="noopener" aria-label="LinkedIn" class="contact-social-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2 4 0 4.9 2.6 4.9 6V24h-4v-7.4c0-1.8 0-4-2.4-4-2.4 0-2.8 1.9-2.8 3.9V24h-4V8z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/PegasusTechVentures" target="_blank" rel="noopener" aria-label="Facebook" class="contact-social-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 8.3V6.5c0-.7.4-1 1-1h1.6V3h-2.4c-2.3 0-3.7 1.4-3.7 3.6v1.7H8.5v2.6h1.5V21h3.2V10.9h2.2l.4-2.6h-2.6z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/pegasustechventures/" target="_blank" rel="noopener" aria-label="Instagram" class="contact-social-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.7A3 3 0 1 1 15 12a3 3 0 0 1-3 3zm5.9-7.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/><path d="M17 2H7A5 5 0 0 0 2 7v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm3.3 15A3.3 3.3 0 0 1 17 20.3H7A3.3 3.3 0 0 1 3.7 17V7A3.3 3.3 0 0 1 7 3.7h10A3.3 3.3 0 0 1 20.3 7z"/></svg>
+                </a>
+                <a href="https://twitter.com/PegasusTech_V" target="_blank" rel="noopener" aria-label="X / Twitter" class="contact-social-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 4h-2.6l-3.7 4.7L8.5 4H3l6.7 8.7L3.2 20h2.6l4.1-5.2 3.9 5.2H20l-7-9.1L18.3 4z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/channel/UCKaW33qpKrzN7_o8OH0vMLA" target="_blank" rel="noopener" aria-label="YouTube" class="contact-social-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19.1 5 12 5 12 5s-7.1 0-8.9.4A3 3 0 0 0 1 7.5 31.6 31.6 0 0 0 .6 12 31.6 31.6 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.8.4 8.9.4 8.9.4s7.1 0 8.9-.4a3 3 0 0 0 2.1-2.1 31.6 31.6 0 0 0 .4-4.5 31.6 31.6 0 0 0-.4-4.5zM9.8 15.2V8.8l5.7 3.2z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer footer-contact">
+      <div class="container footer-menu">
+        <div class="footer-menu-col footer-has-dropdown">
+          <h4>
+            <a href="index.html#top">
+              <span class="i18n i18n-ja">ペガサスについて</span>
+              <span class="i18n i18n-en">About Pegasus</span>
+            </a>
+          </h4>
+          <div class="footer-dropdown">
+            <a href="index.html#mission">
+              <span class="i18n i18n-ja">企業理念</span>
+              <span class="i18n i18n-en">Company Philosophy</span>
+            </a>
+            <a href="index.html#ceo-message">
+              <span class="i18n i18n-ja">CEOメッセージ</span>
+              <span class="i18n i18n-en">CEO Message</span>
+            </a>
+            <a href="index.html#company-info">
+              <span class="i18n i18n-ja">企業情報</span>
+              <span class="i18n i18n-en">Company Information</span>
+            </a>
+            <a href="index.html#management">
+              <span class="i18n i18n-ja">経営陣紹介</span>
+              <span class="i18n i18n-en">Management</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer-menu-col">
+          <h4>
+            <a href="index.html#about">
+              <span class="i18n i18n-ja">事業概要</span>
+              <span class="i18n i18n-en">Business Overview</span>
+            </a>
+          </h4>
+        </div>
+        <div class="footer-menu-col">
+          <h4>
+            <a href="news.html">
+              <span class="i18n i18n-ja">ニュース</span>
+              <span class="i18n i18n-en">News</span>
+            </a>
+          </h4>
+        </div>
+        <div class="footer-menu-col">
+          <h4>
+            <a href="sustainability.html">
+              <span class="i18n i18n-ja">サステナビリティ</span>
+              <span class="i18n i18n-en">Sustainability</span>
+            </a>
+          </h4>
+        </div>
+        <div class="footer-menu-col">
+          <h4>
+            <a href="contact.html">
+              <span class="i18n i18n-ja">お問い合わせ</span>
+              <span class="i18n i18n-en">Contact</span>
+            </a>
+          </h4>
+        </div>
+      </div>
+      <div class="container footer-meta">
+        <p>
+          <span class="i18n i18n-ja">© 著作権 ペガサス・テック・ホールディングス株式会社</span>
+          <span class="i18n i18n-en">© Copyright by Pegasus Tech Holdings K.K.</span>
+        </p>
+        <div class="footer-links footer-icons">
+          <span aria-label="Facebook" role="img">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.5 8.3V6.5c0-.7.4-1 1-1h1.6V3h-2.4c-2.3 0-3.7 1.4-3.7 3.6v1.7H8.5v2.6h1.5V21h3.2V10.9h2.2l.4-2.6h-2.6z"/>
+            </svg>
+          </span>
+          <span aria-label="Twitter" role="img">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19.9 7.5c0 .2 0 .4-.1.6-.6 6-5.1 10.3-10.6 10.3-2.1 0-4.1-.6-5.8-1.7.3 0 .6.1.9.1 1.7 0 3.3-.6 4.6-1.6-1.6 0-3-1.1-3.4-2.6.2 0 .4.1.7.1.3 0 .6 0 .9-.1-1.7-.4-2.9-1.8-2.9-3.6v-.1c.5.3 1.1.5 1.7.5-1-.7-1.6-1.8-1.6-3.1 0-.7.2-1.4.6-2 1.8 2.2 4.4 3.6 7.4 3.8-.1-.3-.1-.5-.1-.8 0-2 1.6-3.6 3.6-3.6 1 0 2 .4 2.6 1.1.8-.2 1.5-.5 2.2-.8-.3.8-.9 1.4-1.6 1.8.7-.1 1.4-.3 2-.6-.5.7-1 1.3-1.6 1.8z"/>
+            </svg>
+          </span>
+          <span aria-label="LinkedIn" role="img">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2 4 0 4.9 2.6 4.9 6V24h-4v-7.4c0-1.8 0-4-2.4-4-2.4 0-2.8 1.9-2.8 3.9V24h-4V8z"/>
+            </svg>
+          </span>
+          <span aria-label="Instagram" role="img">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.7A3 3 0 1 1 15 12a3 3 0 0 1-3 3zm5.9-7.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
+              <path d="M17 2H7A5 5 0 0 0 2 7v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm3.3 15A3.3 3.3 0 0 1 17 20.3H7A3.3 3.3 0 0 1 3.7 17V7A3.3 3.3 0 0 1 7 3.7h10A3.3 3.3 0 0 1 20.3 7z"/>
+            </svg>
+          </span>
+          <span aria-label="YouTube" role="img">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23 7.5a3 3 0 0 0-2.1-2.1C19.1 5 12 5 12 5s-7.1 0-8.9.4A3 3 0 0 0 1 7.5 31.6 31.6 0 0 0 .6 12 31.6 31.6 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.8.4 8.9.4 8.9.4s7.1 0 8.9-.4a3 3 0 0 0 2.1-2.1 31.6 31.6 0 0 0 .4-4.5 31.6 31.6 0 0 0-.4-4.5zM9.8 15.2V8.8l5.7 3.2z"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

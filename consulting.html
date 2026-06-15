@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>コンサルティングサービス | Pegasus Tech Ventures</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script defer src="assets/js/main.js"></script>
+    <style>
+      /* ===== WIDE CONTAINER OVERRIDE ===== */
+      body.page-consulting .container {
+        width: min(1200px, 96vw);
+      }
+      body.page-consulting .header .container {
+        width: 100%;
+        margin: 0;
+        padding: 0 24px;
+      }
+      body.page-consulting .biz-hero .container {
+        width: min(1400px, 97vw);
+      }
+
+      /* ===== HERO ===== */
+      .biz-hero {
+        background: var(--accent);
+        border-bottom: 3px solid rgba(0,0,0,0.12);
+      }
+      .biz-hero-inner {
+        display: grid;
+        grid-template-columns: 1fr 580px;
+        align-items: center;
+        gap: 60px;
+        padding: 72px 0;
+      }
+      .biz-hero-eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.85);
+        font-family: var(--font-body-alt);
+        margin-bottom: 22px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .biz-hero-eyebrow::before {
+        content: '';
+        width: 32px;
+        height: 1px;
+        background: rgba(255,255,255,0.6);
+        flex-shrink: 0;
+      }
+      .biz-hero-title {
+        font-size: clamp(20px, 2.3vw, 38px);
+        font-family: var(--font-title);
+        line-height: 1.45;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 32px;
+      }
+      .biz-hero-deco {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: rgba(255,255,255,0.7);
+        border-radius: 2px;
+      }
+      .biz-hero-img {
+        min-width: 0;
+      }
+      .biz-hero-img img {
+        width: 100%;
+        aspect-ratio: 1518 / 840;
+        object-fit: cover;
+        display: block;
+        border-radius: 6px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      }
+
+      /* ===== BREADCRUMB ===== */
+      .breadcrumb {
+        padding: 16px 0;
+        font-size: 13px;
+        color: var(--ink-soft);
+      }
+      .breadcrumb a { color: var(--accent); }
+      .breadcrumb a:hover { text-decoration: underline; }
+
+      /* ===== TAGLINE SECTION ===== */
+      .tagline-section {
+        padding: 88px 0;
+        background: rgba(0, 163, 224, 0.07);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .tagline-section::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: var(--accent);
+      }
+      .tagline-text {
+        font-size: clamp(20px, 3vw, 36px);
+        font-family: var(--font-title);
+        color: var(--ink);
+        line-height: 1.65;
+        max-width: 960px;
+        margin: 0 auto;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-align: center;
+      }
+      .tagline-bar {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: var(--accent);
+        margin: 28px auto 0;
+        border-radius: 2px;
+      }
+
+      /* ===== ABOUT SECTION ===== */
+      .about-section {
+        padding: 96px 0;
+        background: #ffffff;
+      }
+      .about-eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-family: var(--font-body-alt);
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .about-eyebrow::before {
+        content: '';
+        width: 24px;
+        height: 1px;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+      .about-heading {
+        font-size: clamp(22px, 2.4vw, 34px);
+        font-family: var(--font-title);
+        line-height: 1.5;
+        margin-bottom: 36px;
+        color: var(--ink);
+      }
+      .about-text p {
+        font-size: clamp(16px, 1.3vw, 19px);
+        color: var(--ink-soft);
+        line-height: 2.1;
+        margin-bottom: 1.2em;
+      }
+      .about-text p:last-child { margin-bottom: 0; }
+
+      /* ===== FLOW DIAGRAM ===== */
+      .flow-section {
+        padding: 88px 0;
+        background: rgba(0, 163, 224, 0.07);
+        position: relative;
+        overflow: hidden;
+      }
+      .flow-section::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: var(--accent);
+      }
+      .flow-header {
+        text-align: center;
+        margin-bottom: 52px;
+      }
+      .flow-eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-family: var(--font-body-alt);
+        margin-bottom: 12px;
+      }
+      .flow-header h2 {
+        font-size: clamp(22px, 2.8vw, 36px);
+        font-family: var(--font-title);
+        color: var(--ink);
+      }
+      .flow-diagram {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        flex-wrap: wrap;
+      }
+      .flow-node-pegasus {
+        background: var(--accent);
+        color: #ffffff;
+        border-radius: 16px;
+        padding: 28px 24px;
+        text-align: center;
+        width: 160px;
+        flex-shrink: 0;
+      }
+      .flow-node-pegasus img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        margin-bottom: 10px;
+        filter: brightness(0) invert(1);
+      }
+      .flow-node-pegasus p {
+        font-size: 13px;
+        line-height: 1.7;
+        font-weight: 600;
+      }
+      .flow-arrow {
+        width: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .flow-arrow svg {
+        width: 36px;
+        height: 36px;
+        stroke: var(--accent);
+        fill: none;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .flow-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .flow-node-client {
+        background: #d4711a;
+        color: #ffffff;
+        border-radius: 14px;
+        padding: 18px 48px;
+        font-size: clamp(18px, 2.2vw, 28px);
+        font-family: var(--font-title);
+        font-weight: 700;
+      }
+      .flow-alliance-bar {
+        background: #2d3748;
+        color: #ffffff;
+        border-radius: 8px;
+        padding: 14px 32px;
+        text-align: center;
+      }
+      .flow-alliance-bar strong {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 4px;
+      }
+      .flow-alliance-bar span {
+        font-size: 13px;
+        opacity: 0.85;
+      }
+      .flow-ventures {
+        display: flex;
+        gap: 16px;
+        margin-top: 8px;
+      }
+      .flow-node-venture {
+        background: var(--accent);
+        color: #ffffff;
+        border-radius: 50px;
+        padding: 14px 24px;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+      }
+      .flow-vert-arrows {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        margin: 4px 0;
+      }
+      .flow-vert-arrows svg {
+        width: 20px;
+        height: 20px;
+        stroke: #2d3748;
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      /* ===== PROCESS SECTION ===== */
+      .process-section {
+        padding: 108px 0;
+        background: #ffffff;
+      }
+      .process-section-header {
+        margin-bottom: 52px;
+      }
+      .process-body {
+        display: block;
+      }
+      .process-phase-label {
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-family: var(--font-body-alt);
+        margin-top: 44px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid rgba(0, 163, 224, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .process-phase-label::before {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+      .process-phase-label:first-child { margin-top: 0; }
+      .process-step {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 36px;
+        padding: 34px 0;
+        border-bottom: 1px solid rgba(0, 163, 224, 0.12);
+        align-items: flex-start;
+      }
+      .process-step:last-child { border-bottom: none; }
+      .process-step-tag {
+        background: var(--accent);
+        color: #ffffff;
+        border-radius: 8px;
+        padding: 12px 16px;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.5;
+        text-align: center;
+      }
+      .process-step-tag small {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        opacity: 0.88;
+        margin-top: 4px;
+        letter-spacing: 0.02em;
+      }
+      .process-step.is-key {
+        background: rgba(0, 163, 224, 0.06);
+        border-radius: 12px;
+        padding: 34px 28px;
+        border: 2px solid rgba(0, 163, 224, 0.35);
+        margin: 8px 0;
+        grid-template-columns: 240px 1fr;
+      }
+      .process-step.is-key .process-step-tag {
+        background: transparent;
+        color: var(--accent);
+        border: 2px solid var(--accent);
+        font-size: 17px;
+        font-weight: 700;
+      }
+      .process-step.is-optional {
+        grid-template-columns: 240px 1fr;
+        border-bottom: none;
+      }
+      .process-step.is-optional .process-step-tag {
+        background: rgba(0, 163, 224, 0.12);
+        color: var(--accent);
+        font-size: 15px;
+      }
+      .process-step-body p {
+        font-size: 16px;
+        color: var(--ink-soft);
+        line-height: 2;
+      }
+      .process-optional-note {
+        background: rgba(0, 163, 224, 0.07);
+        border-radius: 8px;
+        padding: 14px 20px;
+        font-size: 14px;
+        color: var(--accent);
+        font-weight: 700;
+        margin: 36px 0 0;
+        border-left: 3px solid var(--accent);
+        letter-spacing: 0.02em;
+      }
+
+      /* ===== PEGASUS UNIVERSITY SECTION ===== */
+      .univ-section {
+        padding: 88px 0;
+        background: rgba(0, 163, 224, 0.07);
+        position: relative;
+        overflow: hidden;
+      }
+      .univ-section::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: var(--accent);
+      }
+      .univ-header {
+        text-align: center;
+        margin-bottom: 52px;
+      }
+      .univ-eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-family: var(--font-body-alt);
+        margin-bottom: 12px;
+      }
+      .univ-header h2 {
+        font-size: clamp(22px, 2.8vw, 36px);
+        font-family: var(--font-title);
+        color: var(--ink);
+        margin-bottom: 10px;
+      }
+      .univ-header p {
+        font-size: 17px;
+        color: var(--ink-soft);
+        margin-top: 8px;
+      }
+      .univ-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .univ-item {
+        text-align: center;
+        padding: 36px 24px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 163, 224, 0.2);
+        border-radius: 14px;
+        transition: box-shadow 0.3s, transform 0.3s;
+      }
+      .univ-item:hover {
+        box-shadow: 0 8px 32px rgba(0, 163, 224, 0.15);
+        transform: translateY(-3px);
+      }
+      .univ-item-label {
+        font-size: clamp(14px, 1.3vw, 17px);
+        font-family: var(--font-title);
+        color: var(--accent);
+        line-height: 1.5;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      .univ-btn-wrap {
+        text-align: center;
+        margin-top: 40px;
+      }
+      .univ-detail-btn {
+        display: inline-block;
+        padding: 14px 40px;
+        background: var(--accent);
+        color: #fff;
+        font-family: var(--font-title);
+        font-size: clamp(14px, 1.2vw, 16px);
+        font-weight: 700;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: opacity 0.2s;
+      }
+      .univ-detail-btn:hover { opacity: 0.8; }
+      .univ-tagline {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px 32px;
+        background: #ffffff;
+        border: 2px solid var(--accent);
+        border-radius: 8px;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .univ-tagline p {
+        font-size: clamp(15px, 1.4vw, 18px);
+        color: var(--accent);
+        font-weight: 700;
+        font-family: var(--font-title);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      /* ===== CTA SECTION ===== */
+      .cta-section {
+        background: var(--accent);
+        padding: 100px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 65%);
+        pointer-events: none;
+      }
+      .cta-inner {
+        max-width: 560px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .see-more-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        background: #ffffff;
+        color: var(--accent);
+        padding: 16px 44px;
+        border-radius: 4px;
+        font-size: 15px;
+        font-family: var(--font-body-alt);
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        font-weight: 700;
+        transition: background 0.25s ease, gap 0.25s ease, box-shadow 0.25s ease;
+      }
+      .see-more-btn svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: transform 0.25s ease;
+        flex-shrink: 0;
+      }
+      .see-more-btn:hover {
+        background: rgba(255,255,255,0.9);
+        gap: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      }
+      .see-more-btn:hover svg { transform: translateX(5px); }
+
+      /* ===== SHARED ===== */
+      .section-eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-family: var(--font-body-alt);
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .section-eyebrow::before {
+        content: '';
+        width: 24px;
+        height: 1px;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+      .section-title-main {
+        font-size: clamp(24px, 3vw, 40px);
+        font-family: var(--font-title);
+        color: var(--ink);
+        margin-bottom: 0;
+      }
+
+      /* ===== ENGLISH FONT & SIZE ===== */
+      body.lang-en .i18n-en {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body.lang-en .biz-hero-title  { font-size: clamp(21px, 2.5vw, 40px); }
+      body.lang-en .tagline-text    { font-size: clamp(18px, 2.3vw, 32px); }
+      body.lang-en .about-heading   { font-size: clamp(23px, 2.5vw, 36px); }
+      body.lang-en .section-title-main { font-size: clamp(25px, 3.1vw, 42px); }
+      body.lang-en .univ-header h2  { font-size: clamp(23px, 2.9vw, 38px); }
+      body.lang-en .univ-item-label { font-size: clamp(15px, 1.4vw, 18px); }
+      body.lang-en .about-text p        { font-size: clamp(16px, 1.3vw, 18px); }
+      body.lang-en .process-step-body p { font-size: 17px; }
+      body.lang-en .univ-header p       { font-size: 16px; }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 1024px) {
+        .univ-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 768px) {
+        .biz-hero-inner {
+          grid-template-columns: 1fr;
+          padding: 44px 0;
+          gap: 32px;
+        }
+        .biz-hero-img { order: -1; }
+        .tagline-section,
+        .about-section,
+        .flow-section,
+        .process-section,
+        .univ-section,
+        .cta-section { padding: 64px 0; }
+        .flow-diagram { flex-direction: column; gap: 16px; }
+        .flow-arrow { transform: rotate(90deg); }
+        .flow-center { width: 100%; }
+        .flow-ventures { flex-wrap: wrap; justify-content: center; }
+      }
+      @media (max-width: 660px) {
+        .process-step,
+        .process-step.is-key,
+        .process-step.is-optional { grid-template-columns: 1fr; gap: 14px; }
+      }
+      @media (max-width: 540px) {
+        .univ-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body class="lang-ja page-consulting">
+    <header class="header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html#top">
+          <img src="assets/corporate_img/logo_horizon.png" alt="Pegasus Tech Ventures" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <div class="nav-item has-dropdown">
+            <a href="index.html#top">
+              <span class="i18n i18n-ja">ペガサスについて</span>
+              <span class="i18n i18n-en">About Pegasus</span>
+            </a>
+            <div class="dropdown">
+              <a href="index.html#mission">
+                <span class="i18n i18n-ja">企業理念</span>
+                <span class="i18n i18n-en">Company Philosophy</span>
+              </a>
+              <a href="index.html#ceo-message">
+                <span class="i18n i18n-ja">CEOメッセージ</span>
+                <span class="i18n i18n-en">CEO Message</span>
+              </a>
+              <a href="index.html#company-info">
+                <span class="i18n i18n-ja">企業情報</span>
+                <span class="i18n i18n-en">Company Information</span>
+              </a>
+              <a href="index.html#management">
+                <span class="i18n i18n-ja">経営陣紹介</span>
+                <span class="i18n i18n-en">Management</span>
+              </a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="index.html#about">
+              <span class="i18n i18n-ja">事業概要</span>
+              <span class="i18n i18n-en">Business Overview</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="news.html">
+              <span class="i18n i18n-ja">ニュース</span>
+              <span class="i18n i18n-en">News</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="sustainability.html">
+              <span class="i18n i18n-ja">サステナビリティ</span>
+              <span class="i18n i18n-en">Sustainability</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="contact.html">
+              <span class="i18n i18n-ja">お問い合わせ</span>
+              <span class="i18n i18n-en">Contact</span>
+            </a>
+          </div>
+        </nav>
+        <div class="header-actions">
+          <button class="button ghost language-toggle" id="lang-toggle" type="button" aria-label="Switch to English">
+            <span class="lang-item is-en" aria-hidden="true">🇺🇸</span>
+            <span class="lang-item is-ja" aria-hidden="true">🇯🇵</span>
+          </button>
+          <button class="nav-toggle" type="button" aria-expanded="false">
+            <span class="i18n i18n-ja">メニュー</span>
+            <span class="i18n i18n-en">Menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ===== HERO ===== -->
+      <div class="biz-hero">
+        <div class="container biz-hero-inner">
+          <div class="biz-hero-text">
+            <p class="biz-hero-eyebrow">Consulting Service</p>
+            <h1 class="biz-hero-title">
+              <span class="i18n i18n-ja">コンサルティングサービス</span>
+              <span class="i18n i18n-en">Consulting Service</span>
+            </h1>
+            <span class="biz-hero-deco"></span>
+          </div>
+          <div class="biz-hero-img">
+            <img src="assets/corporate_img/consulting.png" alt="Consulting &amp; Advisory" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BREADCRUMB ===== -->
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">
+            <span class="i18n i18n-ja">ホーム</span>
+            <span class="i18n i18n-en">Home</span>
+          </a>
+          &nbsp;/&nbsp;
+          <a href="index.html#about">
+            <span class="i18n i18n-ja">事業概要</span>
+            <span class="i18n i18n-en">Business Overview</span>
+          </a>
+          &nbsp;/&nbsp;
+          <span>
+            <span class="i18n i18n-ja">コンサルティングサービス</span>
+            <span class="i18n i18n-en">Consulting Service</span>
+          </span>
+        </nav>
+      </div>
+
+      <!-- ===== TAGLINE ===== -->
+      <section class="tagline-section">
+        <div class="container">
+          <p class="tagline-text">
+            <span class="i18n i18n-ja">世界中のスタートアップの案件発掘から<br>デューデリジェンス・投資・事業提携まで支援</span>
+            <span class="i18n i18n-en">Supporting everything from global startup deal sourcing<br>to due diligence, investment, and business partnerships.</span>
+          </p>
+          <span class="tagline-bar"></span>
+        </div>
+      </section>
+
+      <!-- ===== ABOUT ===== -->
+      <section class="about-section">
+        <div class="container">
+          <p class="about-eyebrow">Service Overview</p>
+          <h2 class="about-heading">
+            <span class="i18n i18n-ja">イノベーション促進のためのコンサルティングアドバイザリーサービス</span>
+            <span class="i18n i18n-en">Consulting &amp; Advisory Services to Drive Corporate Innovation</span>
+          </h2>
+          <div class="about-text">
+            <p>
+              <span class="i18n i18n-ja">ペガサスは、事業会社のイノベーション推進を全面的にサポートするコンサルティング・アドバイザリーサービスを提供しています。世界中のスタートアップを対象に、案件発掘・デューデリジェンス・投資実行・事業提携の支援を一貫して行います。</span>
+              <span class="i18n i18n-en">Pegasus provides comprehensive consulting and advisory services to support corporate innovation. We offer end-to-end support covering deal sourcing, due diligence, investment execution, and business alliance facilitation for startups around the world.</span>
+            </p>
+            <p>
+              <span class="i18n i18n-ja">シリコンバレーをはじめ各国に在籍するチームが、事業会社の関心領域に合わせた最適なスタートアップをご紹介。戦略的ビジネス提携（業務提携／資本提携／合併吸収）の実現に向けて、ソーシングからExitまで伴走します。</span>
+              <span class="i18n i18n-en">Our teams based in Silicon Valley and worldwide introduce startups best matched to each client's areas of interest. We accompany clients every step of the way—from sourcing to exit—toward realizing strategic business partnerships (operational alliances, capital alliances, or M&amp;A).</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PEGASUS UNIVERSITY ===== -->
+      <section class="univ-section">
+        <div class="container">
+          <div class="univ-header">
+            <p class="univ-eyebrow">Optional Service</p>
+            <h2>
+              <span class="i18n i18n-ja">ペガサス大学</span>
+              <span class="i18n i18n-en">Pegasus University</span>
+            </h2>
+            <p>
+              <span class="i18n i18n-ja">ペガサスが提供する人材育成プログラムを活用し、イノベーションに対する社内の意識改革が可能</span>
+              <span class="i18n i18n-en">Leverage Pegasus's talent development program to transform your organization's culture around innovation.</span>
+            </p>
+          </div>
+          <div class="univ-grid">
+            <div class="univ-item">
+              <p class="univ-item-label">
+                <span class="i18n i18n-ja">事業会社向け<br>教育の機会</span>
+                <span class="i18n i18n-en">Educational Opportunities<br>for Corporations</span>
+              </p>
+            </div>
+            <div class="univ-item">
+              <p class="univ-item-label">
+                <span class="i18n i18n-ja">シリコンバレー流の<br>ノウハウの提供</span>
+                <span class="i18n i18n-en">Silicon Valley-Style<br>Expertise &amp; Know-How</span>
+              </p>
+            </div>
+            <div class="univ-item">
+              <p class="univ-item-label">
+                <span class="i18n i18n-ja">1週間・6ヶ月・3年<br>のプログラム</span>
+                <span class="i18n i18n-en">Programs Spanning<br>1 Week, 6 Months &amp; 3 Years</span>
+              </p>
+            </div>
+            <div class="univ-item">
+              <p class="univ-item-label">
+                <span class="i18n i18n-ja">シリコンバレーでの<br>実習体験ができる</span>
+                <span class="i18n i18n-en">Hands-On Internship<br>Experience in Silicon Valley</span>
+              </p>
+            </div>
+            <div class="univ-item">
+              <p class="univ-item-label">
+                <span class="i18n i18n-ja">シリコンバレーで<br>受講が可能</span>
+                <span class="i18n i18n-en">Courses Available<br>in Silicon Valley</span>
+              </p>
+            </div>
+            <div class="univ-item">
+              <p class="univ-item-label">
+                <span class="i18n i18n-ja">日本国内でも<br>開催</span>
+                <span class="i18n i18n-en">Also Held<br>Within Japan</span>
+              </p>
+            </div>
+          </div>
+          <div class="univ-btn-wrap">
+            <a class="univ-detail-btn" href="https://ja.pegasustechventures.com/jp-ptvu-corporations" target="_blank" rel="noopener">
+              <span class="i18n i18n-ja">ペガサス大学の詳細</span>
+              <span class="i18n i18n-en">Learn More About Pegasus University</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CTA ===== -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-inner">
+            <a class="see-more-btn" href="https://ja.pegasustechventures.com/about-us" target="_blank" rel="noopener">
+              <span class="i18n i18n-ja">コンサルティングサービスの詳細</span>
+              <span class="i18n i18n-en">Learn More About Consulting Services</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer footer-contact">
+      <div class="container footer-menu">
+        <div class="footer-menu-col footer-has-dropdown">
+          <h4>
+            <a href="index.html#top">
+              <span class="i18n i18n-ja">ペガサスについて</span>
+              <span class="i18n i18n-en">About Pegasus</span>
+            </a>
+          </h4>
+          <div class="footer-dropdown">
+            <a href="index.html#mission">
+              <span class="i18n i18n-ja">企業理念</span>
+              <span class="i18n i18n-en">Company Philosophy</span>
+            </a>
+            <a href="index.html#ceo-message">
+              <span class="i18n i18n-ja">CEOメッセージ</span>
+              <span class="i18n i18n-en">CEO Message</span>
+            </a>
+            <a href="index.html#company-info">
+              <span class="i18n i18n-ja">企業情報</span>
+              <span class="i18n i18n-en">Company Information</span>
+            </a>
+            <a href="index.html#management">
+              <span class="i18n i18n-ja">経営陣紹介</span>
+              <span class="i18n i18n-en">Management</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer-menu-col">
+          <h4>
+            <a href="index.html#about">
+              <span class="i18n i18n-ja">事業概要</span>
+              <span class="i18n i18n-en">Business Overview</span>
+            </a>
+          </h4>
+        </div>
+        <div class="footer-menu-col">
+          <h4>
+            <a href="news.html">
+              <span class="i18n i18n-ja">ニュース</span>
+              <span class="i18n i18n-en">News</span>
+            </a>
+          </h4>
+        </div>
+        <div class="footer-menu-col">
+          <h4>
+            <a href="sustainability.html">
+              <span class="i18n i18n-ja">サステナビリティ</span>
+              <span class="i18n i18n-en">Sustainability</span>
+            </a>
+          </h4>
+        </div>
+        <div class="footer-menu-col">
+          <h4>
+            <a href="contact.html">
+              <span class="i18n i18n-ja">お問い合わせ</span>
+              <span class="i18n i18n-en">Contact</span>
+            </a>
+          </h4>
+        </div>
+      </div>
+      <div class="container footer-meta">
+        <p>
+          <span class="i18n i18n-ja">© 著作権 ペガサス・テック・ホールディングス株式会社</span>
+          <span class="i18n i18n-en">© Copyright by Pegasus Tech Holdings K.K.</span>
+        </p>
+        <div class="footer-links footer-icons">
+          <span aria-label="Facebook" role="img">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.5 8.3V6.5c0-.7.4-1 1-1h1.6V3h-2.4c-2.3 0-3.7 1.4-3.7 3.6v1.7H8.5v2.6h1.5V21h3.2V10.9h2.2l.4-2.6h-2.6z"/>
+            </svg>
+          </span>
+          <span aria-label="Twitter" role="img">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19.9 7.5c0 .2 0 .4-.1.6-.6 6-5.1 10.3-10.6 10.3-2.1 0-4.1-.6-5.8-1.7.3 0 .6.1.9.1 1.7 0 3.3-.6 4.6-1.6-1.6 0-3-1.1-3.4-2.6.2 0 .4.1.7.1.3 0 .6 0 .9-.1-1.7-.4-2.9-1.8-2.9-3.6v-.1c.5.3 1.1.5 1.7.5-1-.7-1.6-1.8-1.6-3.1 0-.7.2-1.4.6-2 1.8 2.2 4.4 3.6 7.4 3.8-.1-.3-.1-.5-.1-.8 0-2 1.6-3.6 3.6-3.6 1 0 2 .4 2.6 1.1.8-.2 1.5-.5 2.2-.8-.3.8-.9 1.4-1.6 1.8.7-.1 1.4-.3 2-.6-.5.7-1 1.3-1.6 1.8z"/>
+            </svg>
+          </span>
+          <span aria-label="LinkedIn" role="img">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2 4 0 4.9 2.6 4.9 6V24h-4v-7.4c0-1.8 0-4-2.4-4-2.4 0-2.8 1.9-2.8 3.9V24h-4V8z"/>
+            </svg>
+          </span>
+          <span aria-label="Instagram" role="img">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.7A3 3 0 1 1 15 12a3 3 0 0 1-3 3zm5.9-7.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
+              <path d="M17 2H7A5 5 0 0 0 2 7v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm3.3 15A3.3 3.3 0 0 1 17 20.3H7A3.3 3.3 0 0 1 3.7 17V7A3.3 3.3 0 0 1 7 3.7h10A3.3 3.3 0 0 1 20.3 7z"/>
+            </svg>
+          </span>
+          <span aria-label="YouTube" role="img">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23 7.5a3 3 0 0 0-2.1-2.1C19.1 5 12 5 12 5s-7.1 0-8.9.4A3 3 0 0 0 1 7.5 31.6 31.6 0 0 0 .6 12 31.6 31.6 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.8.4 8.9.4 8.9.4s7.1 0 8.9-.4a3 3 0 0 0 2.1-2.1 31.6 31.6 0 0 0 .4-4.5 31.6 31.6 0 0 0-.4-4.5zM9.8 15.2V8.8l5.7 3.2z"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
